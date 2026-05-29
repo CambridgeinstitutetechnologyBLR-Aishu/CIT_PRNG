@@ -1,56 +1,13 @@
-# Tiny Tapeout for PRNG Accelerator
 project:
-  title:        "8-bit LFSR PRNG"      
-  author:       "Aishu and Rishika"    
-  description:  "Intermediate Pseudo-Random Number Generator"      
-  how_it_works: "Uses a Fibonacci LFSR with XOR feedback taps (x^8 + x^6 + x^5 + x^4 + 1)"      
-  how_to_test:  "Load a seed value on ui_in, toggle load_en, then toggle gen_en to start the sequence"  
-  language:     "Verilog"              
-  top_module:   "tt_um_prng_aishu"     
+  title:        "8-bit LFSR PRNG"
+  author:       "Aishu and Rishika"
+  description:  "Intermediate PRNG"
+  how_it_works: "LFSR logic"
+  how_to_test:  "Toggle pins"
+  language:     "Verilog"
+  top_module:   "tt_um_prng_aishu"
   yaml_version: 1
-  tiles: "1x1"                         
-  clock_hz: 10000000                   
-  source_files:                        
+  tiles: "1x1"
+  clock_hz: 10000000
+  source_files:
     - "project.v"
-
-# Pinout mapping
-pinout:
-  # ui_in: Seed Input
-  ui[0]: "seed_0"
-  ui[1]: "seed_1"
-  ui[2]: "seed_2"
-  ui[3]: "seed_3"
-  ui[4]: "seed_4"
-  ui[5]: "seed_5"
-  ui[6]: "seed_6"
-  ui[7]: "seed_7"
-
-  # uo_out: Random Output
-  uo[0]: "rand_0"
-  uo[1]: "rand_1"
-  uo[2]: "rand_2"
-  uo[3]: "rand_3"
-  uo[4]: "rand_4"
-  uo[5]: "rand_5"
-  uo[6]: "rand_6"
-  uo[7]: "rand_7"
-
-  # uio: Control pins
-  uio[0]: "load_en"
-  uio[1]: "gen_en"
-  uio[2]: "unused"
-  uio[3]: "unused"
-  uio[4]: "unused"
-  uio[5]: "unused"
-  uio[6]: "unused"
-  uio[7]: "unused"
-
-# Do not touch the bottom tags; they are for the catalog
-doc:
-  author:      "Aishu and Rishika"
-  description: "8-bit PRNG logic for cryptographical applications"
-  how_it_works: "Standard LFSR shift register with polynomial feedback"
-  how_to_test: "Run simulation or hardware with load enable high"
-  clock_hz:    10000000
-  git_url:     "https://github.com/CambridgeinstitutetechnologyBLR-Aishu/CIT_PRNG"
-  revision:    1
