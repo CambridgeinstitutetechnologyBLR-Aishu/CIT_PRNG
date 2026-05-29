@@ -2,8 +2,8 @@ project:
   title:        "8-bit LFSR PRNG"
   author:       "Aishu and Rishika"
   description:  "Intermediate PRNG"
-  how_it_works: "LFSR logic"
-  how_to_test:  "Toggle pins"
+  how_it_works: "Uses a Fibonacci LFSR with XOR feedback"
+  how_to_test:  "Toggle load_en to seed, then gen_en to run"
   language:     "Verilog"
   top_module:   "tt_um_prng_aishu"
   yaml_version: 1
